@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Verde principal (EpiLog) -->
+    <color name="verde_primary">#0F6E56</color>
+    <color name="verde_mid">#1D9E75</color>
+    <color name="verde_50">#E1F5EE</color>
+    <color name="verde_100">#9FE1CB</color>
+    <color name="verde_600">#0F6E56</color>
+    <color name="verde_800">#085041</color>
+
+    <!-- Coral (botón registrar) -->
+    <color name="coral_400">#D85A30</color>
+    <color name="coral_50">#FAECE7</color>
+
+    <!-- Rojo (emergencia) -->
+    <color name="rojo_50">#FCEBEB</color>
+    <color name="rojo_600">#A32D2D</color>
+    <color name="rojo_700">#791F1F</color>
+    <color name="rojo_800">#A32D2D</color>
+
+    <!-- Etiquetas ILAE -->
+    <color name="chip_focal_bg">#E6F1FB</color>
+    <color name="chip_focal_text">#0C447C</color>
+    <color name="chip_generalizada_bg">#FAEEDA</color>
+    <color name="chip_generalizada_text">#633806</color>
+
+    <!-- Amber -->
+    <color name="amber_50">#FAEEDA</color>
+    <color name="amber_800">#633806</color>
+
+    <!-- Tema Material -->
+    <color name="seed">#0F6E56</color>
+</resources>

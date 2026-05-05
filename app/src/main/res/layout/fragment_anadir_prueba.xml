@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@color/verde_primary" android:orientation="horizontal"
+            android:padding="20dp" android:gravity="center_vertical">
+            <ImageButton android:id="@+id/btn_volver" android:layout_width="36dp"
+                android:layout_height="36dp" android:src="@drawable/ic_back"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:tint="@color/verde_100" android:layout_marginEnd="12dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Añadir prueba médica" android:textColor="@color/verde_50"
+                android:textSize="18sp" android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="TIPO DE PRUEBA" android:textSize="11sp" android:textStyle="bold"
+                android:textColor="?attr/colorOnSurfaceVariant" android:layout_marginBottom="8dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="6dp">
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_rm"
+                    style="@style/Widget.EpiLog.BtnSeleccion"
+                    android:layout_width="0dp" android:layout_height="44dp" android:layout_weight="1"
+                    android:text="RM" android:layout_marginEnd="4dp"/>
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_tac"
+                    style="@style/Widget.EpiLog.BtnSeleccion"
+                    android:layout_width="0dp" android:layout_height="44dp" android:layout_weight="1"
+                    android:text="TAC" android:layout_marginEnd="4dp"/>
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_analitica"
+                    style="@style/Widget.EpiLog.BtnSeleccion"
+                    android:layout_width="0dp" android:layout_height="44dp" android:layout_weight="1"
+                    android:text="Analítica"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="14dp">
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_eeg"
+                    style="@style/Widget.EpiLog.BtnSeleccion"
+                    android:layout_width="0dp" android:layout_height="44dp" android:layout_weight="1"
+                    android:text="EEG" android:layout_marginEnd="4dp"/>
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_ecg"
+                    style="@style/Widget.EpiLog.BtnSeleccion"
+                    android:layout_width="0dp" android:layout_height="44dp" android:layout_weight="1"
+                    android:text="ECG" android:layout_marginEnd="4dp"/>
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_otra"
+                    style="@style/Widget.EpiLog.BtnSeleccion"
+                    android:layout_width="0dp" android:layout_height="44dp" android:layout_weight="1"
+                    android:text="Otra"/>
+            </LinearLayout>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="DESCRIPCIÓN (OPCIONAL)" android:textSize="11sp" android:textStyle="bold"
+                android:textColor="?attr/colorOnSurfaceVariant" android:layout_marginBottom="6dp"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_descripcion" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:hint="RM cerebral con contraste"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="NOTAS (OPCIONAL)" android:textSize="11sp" android:textStyle="bold"
+                android:textColor="?attr/colorOnSurfaceVariant" android:layout_marginBottom="6dp"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_notas" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:minLines="2"
+                    android:hint="Observaciones del médico..."/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="ARCHIVO ADJUNTO" android:textSize="11sp" android:textStyle="bold"
+                android:textColor="?attr/colorOnSurfaceVariant" android:layout_marginBottom="6dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_subir_pdf"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent" android:layout_height="52dp"
+                android:text="Subir PDF de la prueba"
+                android:layout_marginBottom="4dp"
+                app:icon="@drawable/ic_back" /> <!-- Reutilizando icono temporalmente -->
+            <TextView android:id="@+id/tv_nombre_archivo"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Ningún archivo seleccionado"
+                android:textSize="12sp" android:textColor="?attr/colorPrimary"
+                android:layout_marginBottom="20dp" android:textAlignment="center"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_guardar"
+                android:layout_width="match_parent" android:layout_height="56dp"
+                android:text="Guardar prueba médica"
+                android:backgroundTint="@color/verde_primary"
+                app:cornerRadius="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

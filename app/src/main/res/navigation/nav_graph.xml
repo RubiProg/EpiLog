@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/inicioFragment">
+
+    <fragment android:id="@+id/inicioFragment"
+        android:name="com.epilog.app.ui.inicio.InicioFragment"
+        android:label="Inicio">
+        <action android:id="@+id/action_inicio_to_registrarCrisis"
+            app:destination="@id/registrarCrisisFragment"/>
+    </fragment>
+
+    <fragment android:id="@+id/registrarCrisisFragment"
+        android:name="com.epilog.app.ui.crisis.RegistrarCrisisFragment"
+        android:label="Registrar crisis"/>
+
+    <fragment android:id="@+id/historialFragment"
+        android:name="com.epilog.app.ui.historial.HistorialFragment"
+        android:label="Historial"/>
+
+    <fragment android:id="@+id/medicacionFragment"
+        android:name="com.epilog.app.ui.medicacion.MedicacionFragment"
+        android:label="Medicación">
+        <action android:id="@+id/action_medicacion_to_anadirMedicamento"
+            app:destination="@id/anadirMedicamentoFragment"/>
+    </fragment>
+
+    <fragment android:id="@+id/anadirMedicamentoFragment"
+        android:name="com.epilog.app.ui.medicacion.AnadirMedicamentoFragment"
+        android:label="Añadir medicamento"/>
+
+    <fragment android:id="@+id/perfilFragment"
+        android:name="com.epilog.app.ui.perfil.PerfilFragment"
+        android:label="Perfil">
+        <action android:id="@+id/action_perfil_to_anadirPrueba"
+            app:destination="@id/anadirPruebaFragment"/>
+        <action android:id="@+id/action_perfil_to_generarInforme"
+            app:destination="@id/generarInformeFragment"/>
+    </fragment>
+
+    <fragment android:id="@+id/anadirPruebaFragment"
+        android:name="com.epilog.app.ui.perfil.AnadirPruebaFragment"
+        android:label="Añadir prueba médica"/>
+
+    <fragment android:id="@+id/generarInformeFragment"
+        android:name="com.epilog.app.ui.perfil.GenerarInformeFragment"
+        android:label="Generar informe"/>
+
+    <fragment android:id="@+id/estadisticasFragment"
+        android:name="com.epilog.app.ui.estadisticas.EstadisticasFragment"
+        android:label="Estadísticas"/>
+
+</navigation>

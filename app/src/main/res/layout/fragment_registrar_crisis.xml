@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/verde_primary"
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:gravity="center_vertical">
+            <ImageButton android:id="@+id/btn_volver" android:layout_width="36dp"
+                android:layout_height="36dp" android:src="@drawable/ic_back"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:tint="@color/verde_100" android:layout_marginEnd="12dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Registrar crisis" android:textColor="@color/verde_50"
+                android:textSize="18sp" android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp">
+
+            <!-- Fecha y hora -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="FECHA Y HORA" android:textSize="11sp" android:textStyle="bold"
+                android:textColor="?attr/colorOnSurfaceVariant" android:layout_marginBottom="6dp"/>
+            <TextView android:id="@+id/tv_fecha_hora" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:background="?attr/colorSurfaceVariant"
+                android:padding="12dp" android:textSize="14sp"
+                android:layout_marginBottom="14dp"/>
+
+            <!-- Duración -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="DURACIÓN" android:textSize="11sp" android:textStyle="bold"
+                android:textColor="?attr/colorOnSurfaceVariant" android:layout_marginBottom="8dp"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="14dp">
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_dur1"
+                    style="@style/Widget.EpiLog.BtnSeleccion"
+                    android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1"
+                    android:text="&lt;1 min" android:layout_marginEnd="4dp"/>
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_dur2"
+                    style="@style/Widget.EpiLog.BtnSeleccion"
+                    android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1"
+                    android:text="1-3 min" android:layout_marginEnd="4dp"/>
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_dur3"
+                    style="@style/Widget.EpiLog.BtnSeleccion"
+                    android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1"
+                    android:text="3-5 min" android:layout_marginEnd="4dp"/>
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_dur4"
+                    style="@style/Widget.EpiLog.BtnSeleccion"
+                    android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1"
+                    android:text="&gt;5 min"/>
+            </LinearLayout>
+
+            <!-- ILAE Nivel 1 Origen -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="NIVEL 1 — ORIGEN (ILAE)" android:textSize="11sp" android:textStyle="bold"
+                android:textColor="?attr/colorOnSurfaceVariant" android:layout_marginBottom="8dp"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="10dp">
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_focal"
+                    style="@style/Widget.EpiLog.BtnSeleccion"
+                    android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1"
+                    android:text="Focal" android:layout_marginEnd="4dp"/>
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_generalizada"
+                    style="@style/Widget.EpiLog.BtnSeleccion"
+                    android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1"
+                    android:text="Generalizada" android:layout_marginEnd="4dp"/>
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_desconocido"
+                    style="@style/Widget.EpiLog.BtnSeleccion"
+                    android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1"
+                    android:text="Desconocido"/>
+            </LinearLayout>
+
+            <!-- ILAE Nivel 2 Consciencia (solo focal) -->
+            <LinearLayout android:id="@+id/layout_consciencia"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:visibility="gone">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="NIVEL 2 — CONSCIENCIA" android:textSize="11sp" android:textStyle="bold"
+                    android:textColor="?attr/colorOnSurfaceVariant" android:layout_marginBottom="8dp"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginBottom="10dp">
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btn_preservada"
+                        style="@style/Widget.EpiLog.BtnSeleccion"
+                        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                        android:text="Preservada\n(parcial simple)" android:layout_marginEnd="4dp"/>
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btn_alterada"
+                        style="@style/Widget.EpiLog.BtnSeleccion"
+                        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                        android:text="Alterada\n(parcial compleja)"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ILAE Nivel 3 Manifestaciones -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="NIVEL 3 — MANIFESTACIÓN (múltiple)" android:textSize="11sp" android:textStyle="bold"
+                android:textColor="?attr/colorOnSurfaceVariant" android:layout_marginBottom="8dp"/>
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group_manifestaciones"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                app:singleSelection="false">
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cognitiva / lenguaje"/>
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Motora"/>
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sensitiva"/>
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Autonómica"/>
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Emocional"/>
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Ausencia"/>
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tónico-clónica"/>
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- Síntomas aura -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="SÍNTOMAS PREVIOS (AURA)" android:textSize="11sp" android:textStyle="bold"
+                android:textColor="?attr/colorOnSurfaceVariant" android:layout_marginBottom="8dp"/>
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group_sintomas"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                app:singleSelection="false">
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Alteración del habla"/>
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Náuseas"/>
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Déjà vu"/>
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Luces"/>
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mareo"/>
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Miedo"/>
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Irrealidad"/>
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Automatismos"/>
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cambio de voz"/>
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Ninguno"/>
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- Desencadenantes -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="POSIBLE DESENCADENANTE" android:textSize="11sp" android:textStyle="bold"
+                android:textColor="?attr/colorOnSurfaceVariant" android:layout_marginBottom="8dp"/>
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group_desencadenantes"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                app:singleSelection="false">
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Falta de sueño"/>
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Estrés"/>
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Alcohol"/>
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Luz intensa"/>
+                <com.google.android.material.chip.Chip style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No sé"/>
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- Notas -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="NOTAS (OPCIONAL)" android:textSize="11sp" android:textStyle="bold"
+                android:textColor="?attr/colorOnSurfaceVariant" android:layout_marginBottom="6dp"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_notas"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:minLines="2" android:hint="Añade cualquier detalle relevante..."/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_guardar"
+                android:layout_width="match_parent" android:layout_height="56dp"
+                android:text="Guardar crisis"
+                android:backgroundTint="@color/verde_primary"
+                app:cornerRadius="10dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

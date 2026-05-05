@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.EpiLog" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/verde_primary</item>
+        <item name="colorOnPrimary">@color/verde_50</item>
+        <item name="colorPrimaryContainer">@color/verde_50</item>
+        <item name="colorOnPrimaryContainer">@color/verde_800</item>
+        <item name="android:statusBarColor">@color/verde_primary</item>
+    </style>
+
+    <style name="Widget.EpiLog.BtnSeleccion" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:textSize">12sp</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+    </style>
+</resources>

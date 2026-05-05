@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EpiLog</string>
+    <string name="registrar_crisis">Registrar crisis</string>
+    <string name="historial">Historial</string>
+    <string name="medicacion">Medicación</string>
+    <string name="perfil">Perfil</string>
+    <string name="guardar">Guardar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="sin_datos">Sin datos registrados</string>
+</resources>

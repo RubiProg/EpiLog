@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header con avatar y botón volver -->
+        <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@color/verde_primary">
+
+            <ImageButton
+                android:id="@+id/btn_volver"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="12dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_back"
+                app:tint="@color/verde_50"
+                android:contentDescription="Volver" />
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp" android:gravity="center">
+                <TextView android:id="@+id/tv_iniciales"
+                    android:layout_width="56dp" android:layout_height="56dp"
+                    android:background="@drawable/bg_avatar"
+                    android:gravity="center" android:textSize="22sp"
+                    android:textStyle="bold" android:textColor="@color/verde_50"
+                    android:text="JG" android:layout_marginBottom="10dp"/>
+                <TextView android:id="@+id/tv_nombre" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:textColor="@color/verde_50"
+                    android:textSize="17sp" android:textStyle="bold"
+                    android:text="Nombre Apellido"/>
+                <TextView android:id="@+id/tv_email" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:textColor="@color/verde_100"
+                    android:textSize="12sp" android:layout_marginTop="4dp"
+                    android:text="correo@ejemplo.com"/>
+            </LinearLayout>
+        </FrameLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp">
+
+            <!-- Datos médicos -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="DATOS MÉDICOS" android:textSize="11sp" android:textStyle="bold"
+                android:textColor="?attr/colorOnSurfaceVariant" android:layout_marginBottom="8dp"/>
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="14dp"
+                app:cardCornerRadius="10dp" app:cardElevation="0dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout android:id="@+id/btn_editar_tipo"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:padding="12dp"
+                        android:clickable="true" android:focusable="true"
+                        android:background="?attr/selectableItemBackground">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Tipo de epilepsia"
+                            android:textColor="?attr/colorOnSurfaceVariant" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tv_tipo_epilepsia" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:textSize="13sp"
+                            android:text="Tónica-clónica" android:textColor="?attr/colorPrimary"/>
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="0.5dp"
+                        android:background="?attr/colorOutline"/>
+                    <LinearLayout android:id="@+id/btn_editar_neurologo"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:padding="12dp"
+                        android:clickable="true" android:focusable="true"
+                        android:background="?attr/selectableItemBackground">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Neurólogo"
+                            android:textColor="?attr/colorOnSurfaceVariant" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tv_neurologo_valor" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:textSize="13sp"
+                            android:text="Dr. García" android:textColor="?attr/colorPrimary"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Pruebas médicas -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="PRUEBAS MÉDICAS" android:textSize="11sp" android:textStyle="bold"
+                android:textColor="?attr/colorOnSurfaceVariant" android:layout_marginBottom="8dp"/>
+            <TextView android:id="@+id/tv_pruebas_count" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="13sp"
+                android:textColor="?attr/colorOnSurfaceVariant" android:layout_marginBottom="8dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_anadir_prueba"
+                android:layout_width="match_parent" android:layout_height="48dp"
+                android:text="+ Añadir prueba médica"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_marginBottom="14dp"/>
+
+            <!-- Informe -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="INFORME PARA EL NEURÓLOGO" android:textSize="11sp" android:textStyle="bold"
+                android:textColor="?attr/colorOnSurfaceVariant" android:layout_marginBottom="8dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_generar_informe"
+                android:layout_width="match_parent" android:layout_height="52dp"
+                android:text="Generar informe por periodo"
+                android:backgroundTint="@color/verde_primary"
+                app:cornerRadius="10dp" android:layout_marginBottom="14dp"/>
+
+            <!-- Contacto emergencia -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="CONTACTO DE EMERGENCIA" android:textSize="11sp" android:textStyle="bold"
+                android:textColor="?attr/colorOnSurfaceVariant" android:layout_marginBottom="8dp"/>
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="14dp"
+                app:cardCornerRadius="10dp" app:cardElevation="0dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout android:id="@+id/btn_editar_contacto_nombre"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:padding="12dp"
+                        android:clickable="true" android:focusable="true"
+                        android:background="?attr/selectableItemBackground">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Nombre"
+                            android:textColor="?attr/colorOnSurfaceVariant" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tv_contacto_nombre" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:textSize="13sp"
+                            android:text="Madre" android:textColor="?attr/colorPrimary"/>
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="0.5dp"
+                        android:background="?attr/colorOutline"/>
+                    <LinearLayout android:id="@+id/btn_editar_contacto_telefono"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:padding="12dp"
+                        android:clickable="true" android:focusable="true"
+                        android:background="?attr/selectableItemBackground">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Teléfono"
+                            android:textColor="?attr/colorOnSurfaceVariant" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tv_contacto_telefono" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:textSize="13sp"
+                            android:text="600 000 000" android:textColor="?attr/colorPrimary"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="EpiLog v1.0 · hecho con cuidado"
+                android:textAlignment="center" android:textSize="11sp"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:layout_marginBottom="16dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
